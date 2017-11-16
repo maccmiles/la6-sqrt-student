@@ -26,7 +26,11 @@ public class LA6a {
 	 * @return absolute value of input
 	 */
 	public static double absoluteValue(double value) {
-		return 0.0; // TODO: replace with your code
+		if(value < 0) {
+			return value * -1;
+		}else {
+			return value;
+		}
 	}
 	
 	/**
@@ -47,7 +51,14 @@ public class LA6a {
 	 * @return square root
 	 */
 	public static double squareRoot(double x, double initialGuess, double errTolerance) {
-		return 0.0; // TODO: replace with your code
+		double diff, next, last;
+		last = initialGuess;
+		do {
+			next = (last + (x/last))/2;
+			diff = absoluteValue(last - next);
+			last = next;
+		}while(diff > errTolerance);
+		return next;
 	}
 
 	/**
@@ -60,7 +71,7 @@ public class LA6a {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		final Scanner kbInput = new Scanner(System.in);
-		
+		// X , to calc sqrt
 		double val;
 		do {
 			System.out.printf("Enter a value for which to take the square root: ");
@@ -70,7 +81,31 @@ public class LA6a {
 			}
 		} while (val <= 0);
 		
-		// TODO: write your code here
+		//initial Guess
+		double initGuess;
+		do {
+			System.out.printf("Enter an initial guess as to the answer: ");
+			initGuess = kbInput.nextDouble();
+			if (initGuess <= 0) {
+				System.out.printf("%s%n", E_GUESS);
+			}
+		} while (initGuess <= 0);
+		
+		//Error Tolerance
+				double percentErr;
+				do {
+					System.out.printf("Enter an error tolerance for the calculation: ");
+					percentErr = kbInput.nextDouble();
+					if (percentErr <= 0) {
+						System.out.printf("%s%n", E_TOLERANCE);
+					}
+				} while (percentErr <= 0);
+				
+			double ans;
+			ans = squareRoot(val, initGuess, percentErr);
+			
+			System.out.printf("sqrt(%.5f) ~ %.5f%n", val, ans);
 	}
+	
 
 }
