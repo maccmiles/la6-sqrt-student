@@ -1,0 +1,10 @@
+Score: 100
+
+== junit ==
+edu.wit.cs.comp1000.grading.LA6aGrading#testAbsoluteValue: +15
+edu.wit.cs.comp1000.grading.LA6aGrading#testSquareRoot: +35
+edu.wit.cs.comp1000.grading.LA6aGrading#testProg: +25
+edu.wit.cs.comp1000.grading.LA6aGrading#testProgVal: +5
+edu.wit.cs.comp1000.grading.LA6aGrading#testProgGuess: +5
+edu.wit.cs.comp1000.grading.LA6aGrading#testProgTolerance: +5
+edu.wit.cs.comp1000.grading.LA6aGrading#testProgMix: +10
